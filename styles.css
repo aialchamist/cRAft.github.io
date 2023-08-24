@@ -1,97 +1,62 @@
-/* Reset some default browser styles */
-body, h1, h2, h3, p {
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
 }
 
-/* Global styles */
 body {
     font-family: Arial, sans-serif;
 }
 
 /* Header styles */
 header {
-    background-color: red;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
 }
 
-.logo {
-    font-size: 2rem;
-    font-weight: bold;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 50px; /* Adjust the size as needed */
+    height: auto;
 }
 
 .nav-links {
     list-style: none;
+    display: flex;
 }
 
 .nav-links li {
-    display: inline;
-    margin: 0 1rem;
+    margin-right: 20px;
 }
 
 .nav-links a {
-    color: white;
     text-decoration: none;
+    color: #fff;
 }
 
-/* Hero section styles */
-.hero {
-    background-image: url('path-to-your-random-image.jpg');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    padding: 5rem 0;
+/* Main content styles */
+.main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
-.craft {
-    font-size: 4rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.cta-button {
-    background-color: white;
-    color: red;
-    padding: 0.5rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-/* Section heading styles */
-.section-heading {
-    color: red;
-    text-align: center;
-    margin-top: 3rem;
-}
-
-/* Project styles */
-.project {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1rem;
-    margin: 1rem;
+.projects {
+    margin-top: 20px;
 }
 
 /* Footer styles */
 footer {
-    background-color: red;
-    color: white;
     text-align: center;
-    padding: 1rem 0;
-}
-
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: block;
-        text-align: center;
-        margin-top: 1rem;
-    }
-
-    .nav-links li {
-        margin: 0.5rem;
-    }
+    padding: 10px 0;
+    background-color: #f4f4f4;
 }
