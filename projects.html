@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Projects</title>
+</head>
+<body>
+
+    <header>
+        <div class="portfolio-heading">
+            <h1>Portfolio<span style="color: #08f0ff;">.</span></h1>
+        </div>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="#services">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <section id="projects-section">
+        <h2 class="section-heading">Projects</h2>
+
+        <!-- Project Posts -->
+        <div class="project-post">
+            <h3><a href="project1.html">Project 1</a></h3>
+            <p>Description of Project 1.</p>
+            <a href="project1.html" class="learn-more-link">Learn More</a>
+            <div class="project-details" id="project1-details">
+                <p>Additional details about Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+
+        <div class="project-post">
+            <h3><a href="project2.html">Project 2</a></h3>
+            <p>Description of Project 2.</p>
+            <a href="project2.html" class="learn-more-link">Learn More</a>
+            <div class="project-details" id="project2-details">
+                <p>Additional details about Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+
+        <!-- Repeat similar structure for other projects -->
+
+    </section>
+
+    <!-- Add Stylized Buttons -->
+    <section class="social-buttons">
+        <a href="mailto:rachitkreddy@gmail.com" class="social-button"><i class="far fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/" target="_blank" class="social-button"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" class="social-button"><i class="fab fa-instagram"></i></a>
+    </section>
+
+    <!-- Add Smooth Scroll and Toggle Details Script -->
+    <script>
+        document.querySelectorAll('.learn-more-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Hide all project details
+                document.querySelectorAll('.project-details').forEach(details => {
+                    details.style.display = 'none';
+                });
+
+                // Show the details of the clicked project
+                document.querySelector(this.getAttribute('href').replace('.html', '') + '-details').style.display = 'block';
+
+                // Scroll to the specified project section
+                document.querySelector(this.getAttribute('href').replace('.html', '')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

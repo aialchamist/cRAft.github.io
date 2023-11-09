@@ -3,46 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Contact Us - Your Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Me</title>
 </head>
 <body>
+
     <header>
-        <nav>
-            <div class="logo">
-                <img src="images/logo.png" alt="Logo">
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="portfolio-heading">
+            <h1>Portfolio<span style="color: #08f0ff;">.</span></h1>
+        </div>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </header>
-    
-    <main class="main">
-        <section class="contact">
-            <h2>Contact Us</h2>
-            <p>We'd love to hear from you! Feel free to reach out with any questions, suggestions, or collaboration ideas.</p>
-            
-            <form action="#" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2023 Your Personal Website. All rights reserved.</p>
-    </footer>
+
+    <section id="contact-section">
+        <h2 class="section-heading">Contact me!</h2>
+        <form action="process_form.php" method="post">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+
+            <label for="subject">Email Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Add Stylized Buttons -->
+    <section class="social-buttons">
+        <a href="https://www.linkedin.com/" target="_blank" class="social-button"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" class="social-button"><i class="fab fa-instagram"></i></a>
+    </section>
+
 </body>
 </html>
