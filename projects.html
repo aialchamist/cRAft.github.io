@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Projects</title>
 </head>
 <body>
@@ -24,9 +24,8 @@
     <section id="projects-section">
         <h2 class="section-heading">Projects</h2>
 
-        <!-- Project Posts -->
         <div class="project-post">
-            <h3><a href="project1.html">Project 1</a></h3>
+            <h3><a href="project1.html">Data Science Project</a></h3>
             <p>Description of Project 1.</p>
             <a href="project1.html" class="learn-more-link">Learn More</a>
             <div class="project-details" id="project1-details">
@@ -36,14 +35,21 @@
 
         <div class="project-post">
             <h3><a href="project2.html">Project 2</a></h3>
-            <p>Description of Project 2.</p>
+            <p>Description.</p>
             <a href="project2.html" class="learn-more-link">Learn More</a>
             <div class="project-details" id="project2-details">
                 <p>Additional details about Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
         </div>
 
-        <!-- Repeat similar structure for other projects -->
+        <div class="project-post">
+            <h3><a href="project3.html">Project 3</a></h3>
+            <p>Description of Project 3.</p>
+            <a href="project3.html" class="learn-more-link">Learn More</a>
+            <div class="project-details" id="project3-details">
+                <p>Additional details about Project 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
 
     </section>
 
@@ -60,15 +66,12 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                // Hide all project details
                 document.querySelectorAll('.project-details').forEach(details => {
                     details.style.display = 'none';
                 });
 
-                // Show the details of the clicked project
                 document.querySelector(this.getAttribute('href').replace('.html', '') + '-details').style.display = 'block';
 
-                // Scroll to the specified project section
                 document.querySelector(this.getAttribute('href').replace('.html', '')).scrollIntoView({
                     behavior: 'smooth'
                 });

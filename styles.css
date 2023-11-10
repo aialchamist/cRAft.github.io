@@ -1,0 +1,326 @@
+:root {
+    --main-bg-color: #222733;
+    --highlight-color: #00eeff;
+    --main-text-color: #fff;
+    --section-bg-color: #35424a;
+}
+
+body {
+    font-family: 'Publica Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+header {
+    background-color: rgba(34, 39, 51, 1);
+    color: var(--main-text-color);
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio-heading {
+    flex-grow: 1;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    color: var(--main-text-color);
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--highlight-color);
+}
+
+#hello-section,
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hello-section {
+    margin: 80px auto;
+}
+
+.hello-text {
+    text-align: center;
+    color: var(--main-text-color);
+}
+
+.hello-text h2 {
+    font-size: 2.55rem;
+    margin: 0;
+}
+
+.hello-text p {
+    font-size: 1.5rem;
+    margin: 10px 0 0 0;
+}
+
+.social-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-button {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 26px;
+    color: var(--highlight-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.social-button:hover .link-preview {
+    visibility: visible;
+    height: auto;
+}
+
+.link-preview {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--section-bg-color);
+    color: var(--main-text-color);
+    padding: 5px;
+    border-radius: 9%;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: visibility 0s, height 0.2s ease;
+    font-size: 15px;
+}
+
+#projects-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-post {
+    width: calc(100% - 20px);
+    background-color: var(--section-bg-color);
+    color: var(--main-text-color);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.project-post:hover {
+    background-color: var(--highlight-color);
+    color: var(--main-bg-color);
+}
+
+.project-post h3 {
+    margin-top: 0;
+}
+
+.project-post a {
+    display: block;
+    margin-top: 10px;
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-post a:hover {
+    color: var(--main-text-color);
+}
+
+.project-details {
+    display: none;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--section-bg-color);
+    color: var(--main-text-color);
+    border-radius: 5px;
+}
+
+.download-button,
+.read-more-button,
+.back-button,
+.back-link {
+    display: inline-block;
+    background-color: var(--highlight-color);
+    color: var(--main-bg-color);
+    padding: 7px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.125rem;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-button:hover,
+.read-more-button:hover,
+.back-button:hover,
+.back-link:hover {
+    background-color: var(--main-text-color);
+    color: #35424a;
+}
+
+.section-heading {
+    color: var(--main-text-color);
+    font-size: 2.25rem;
+    margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    #hello-section {
+        margin: 40px auto;
+    }
+
+    .hello-text {
+        text-align: center;
+    }
+
+    .project-post {
+        width: calc(50% - 20px);
+    }
+}
+
+#about-section {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#about-section p {
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+}
+
+.section-heading {
+    color: #08f0ff;
+}
+
+.read-more-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #08f0ff;
+    color: #35424a;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+    background-color: #fff;
+}
+
+.transition-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, transparent 50%, #fff 50%);
+    animation: mask-display-hide 1s ease-in-out forwards;
+}
+
+@keyframes mask-display-hide {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.transition-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 0s 1s;
+}
+
+.transition-active .transition-container {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease, visibility 0s;
+}
+
+body.transition-active {
+    /* Your transition styles here */
+    overflow: hidden; /* Hide overflow to prevent horizontal scrollbar during transition */
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+#contact-section {
+    text-align: center;
+    margin-top: 80px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--highlight-color);
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: var(--highlight-color);
+    color: var(--main-bg-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--main-text-color);
+}
+
+.social-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-button {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 26px;
+    color: var(--highlight-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Python Compiler Project</title>
+</head>
+<body>
+
+    <header>
+        <div class="portfolio-heading">
+            <h1>Python Compiler<span style="color: #08f0ff;">.</span></h1>
+        </div>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="#services">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <section id="python-compiler-section">
+        <h2>Python Compiler</h2>
+        <label for="python-code">Enter your Python code:</label>
+        <textarea id="python-code" rows="10" cols="50"></textarea>
+        <button onclick="compileAndRun()">Compile & Run</button>
+
+        <h3>Output:</h3>
+        <pre id="output"></pre>
+    </section>
+
+    <!-- Add Back Button -->
+    <section class="back-button">
+        <a href="projects.html" class="back-link">Back to Projects</a>
+    </section>
+
+    <!-- Add Stylized Buttons -->
+    <section class="social-buttons">
+        <a href="mailto:rachitkreddy@gmail.com" class="social-button"><i class="far fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/" target="_blank" class="social-button"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" class="social-button"><i class="fab fa-instagram"></i></a>
+        <!-- Add GitHub link -->
+        <a href="https://github.com/your-username" target="_blank" class="social-button"><i class="fab fa-github"></i></a>
+    </section>
+
+    <script>
+        function compileAndRun() {
+            // Get the Python code from the textarea
+            var pythonCode = document.getElementById("python-code").value;
+
+            // Example: Execute Python code using a hypothetical function
+            var output = executePythonCode(pythonCode);
+
+            // Display the output in the 'output' element
+            document.getElementById("output").innerText = output;
+        }
+
+        function executePythonCode(code) {
+            // Simulate Python code execution (replace with actual server-side logic)
+            try {
+                var result = eval("(function() { " + code + " })();");
+                return "Output from Python code:\n\n" + result;
+            } catch (error) {
+                return "Error during code execution:\n\n" + error;
+            }
+        }
+    </script>
+
+</body>
+</html>

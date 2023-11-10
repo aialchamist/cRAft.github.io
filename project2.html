@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Project 2</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.6/brython.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.6/brython_stdlib.js"></script>
+    <title>OCR</title>
 </head>
 <body>
 
@@ -22,16 +24,74 @@
     </header>
 
     <section id="project2">
-        <h2>Project 2</h2>
-        <p>Details about Project 2.</p>
+        <h2>Optical Character Recognition</h2>
+        <p>Details about OCR.</p>
+        
+        <!-- File upload input -->
+        <input type="file" id="imageInput" accept="image/*">
+        
+        <!-- Button to trigger OCR -->
+        <button id="runButton">Run OCR</button>
+
+        <!-- Loading bar -->
+        <progress id="loadingBar" value="0" max="100"></progress>
+
+        <!-- Display area for OCR result -->
+        <div id="ocrResult"></div>
     </section>
 
-    <!-- Add Stylized Buttons -->
-    <section class="social-buttons">
-        <a href="mailto:rachitkreddy@gmail.com" class="social-button"><i class="far fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/" target="_blank" class="social-button"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/" target="_blank" class="social-button"><i class="fab fa-instagram"></i></a>
-    </section>
+    <!-- Include and run Python script -->
+    <script type="text/python">
+        import brython
+        brython.run_script("""
+import easyocr
+
+def extract_text_from_receipt(image_data):
+    reader = easyocr.Reader(['en'])
+    results = reader.readtext(image_data)
+    detected_text = " ".join([result[1] for result in results])
+    return detected_text
+
+def runPythonScript():
+    file_input = document.getElementById("imageInput")
+    selected_file = file_input.files[0]
+
+    if selected_file:
+        let file_reader = new FileReader();
+
+        file_reader.onload = function (e) {
+            processImage(e.target.result)
+        };
+
+        file_reader.onprogress = function (e) {
+            if (e.lengthComputable) {
+                let percentage = (e.loaded / e.total) * 100;
+                updateLoadingBar(percentage);
+            }
+        };
+
+        file_reader.readAsDataURL(selected_file)
+    else {
+        document.getElementById("ocrResult").innerHTML = "Please select an image."
+    }
+
+def processImage(image_data_url):
+    image_data = image_data_url.split(",")[1]
+    updateLoadingBar(25);
+
+    detected_text = extract_text_from_receipt(image_data)
+
+    updateLoadingBar(100);
+
+    document.getElementById("ocrResult").innerHTML = detected_text;
+
+def updateLoadingBar(value):
+    document.getElementById("loadingBar").value = value;
+
+# Attach event listener using JavaScript
+document.getElementById("runButton").addEventListener("click", runPythonScript)
+""")
+    </script>
 
 </body>
 </html>

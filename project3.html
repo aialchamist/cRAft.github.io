@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Project 3</title>
+</head>
+<body>
+
+    <header>
+        <div class="portfolio-heading">
+            <h1>Portfolio<span style="color: #08f0ff;">.</span></h1>
+        </div>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="#services">Services</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <section id="project3-section">
+        <h2 class="section-heading">Project 3</h2>
+
+        <p>Description of Project 3 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <!-- Additional details specific to Project 3 -->
+        <div class="project-details">
+            <h3>File Upload and "Conversion"</h3>
+            <form id="fileForm" enctype="multipart/form-data" method="post">
+                <input type="file" id="fileInput" accept=".jpg">
+                <button type="button" onclick="uploadAndConvert()">Upload and Convert</button>
+            </form>
+            <progress id="loadingBar" value="0" max="100"></progress>
+        </div>
+
+    </section>
+
+    <script>
+        function uploadAndConvert() {
+            var fileInput = document.getElementById('fileInput');
+            var loadingBar = document.getElementById('loadingBar');
+            var file = fileInput.files[0];
+
+            if (file) {
+                // Simulating a delay for the "conversion" process
+                var progress = 0;
+                var interval = setInterval(function () {
+                    progress += 10;
+                    loadingBar.value = progress;
+
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                        alert('File uploaded and "converted" successfully!');
+                        loadingBar.value = 0;
+                    }
+                }, 500);
+            }
+        }
+    </script>
+
+</body>
+</html>
